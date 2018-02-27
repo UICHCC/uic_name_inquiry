@@ -41,13 +41,12 @@
 		html,
 		body {
 		  height: 100%;
-		  background-image: url("https://source.unsplash.com/collection/1626538");
+		  background-image: url("https://source.unsplash.com/collection/1543484");
 		  background-size: cover;
 		  background-color: #333;
 		}
 
 		body {
-		  padding-bottom: 3rem;
 		  color: #5a5a5a;
 		  height: 100%;
 		  font-family: 'Segoe UI','冬青黑体简体中文','Microsoft YaHei','微软雅黑',STXihei,'华文黑体',SimSun,'中易宋体',sans-serif;
@@ -134,10 +133,21 @@
 		.invisible{
 			visibility: hidden;
 		}
+        .site-wrapper-inner {
+          display: table-cell;
+          vertical-align: top;
+        }
+        .site-wrapper {
+          display: table;
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+        }
     </style>
   </head>
 <body class="text-center" data-gr-c-s-loaded="true" style="">
-
+<div class="site-wrapper">
+  <div class="site-wrapper-inner" style="background-color: rgba(0, 0, 0, 0.5);">
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
@@ -146,8 +156,8 @@
       </header>
 
       <main role="main" class="inner cover">
-      	<div class="card border-primary bg-transparent invisible" style="margin-bottom: 1rem;" id="amountCard">
-		<div class="card-header border-primary">数据库中叫 <span id="titleName"></span> 的人有</div>
+      	<div class="card border-warning invisible bg-transparent" style="margin-bottom: 1rem;" id="amountCard">
+		<div class="card-header border-warning">数据库中叫 <span id="titleName"></span> 的人有</div>
 			<div class="card-body">
 				<h1><span id="amountPlace"></span> 人</h1>
 			</div>
@@ -155,7 +165,7 @@
         <input class="form-control form-control-lg" type="text" placeholder="Your English Name" id="EnglishName" style="text-align: center;">
         <p class="lead"></p>
         <p class="lead">
-          <button class="btn btn-lg btn-primary" id="InquiryBtn">查询</button>
+          <button class="btn btn-lg btn-warning" id="InquiryBtn">查询</button>
         </p>
         <small>我们整理出了 2013 届 - 2017 届学生的英文名，来看看有多少人与你同名呢？ <br>（部分英文名大小写敏感）</small>
       </main>
@@ -172,6 +182,8 @@
         </div>
       </footer>
     </div>
+  </div>
+</div>
 
 
     <!-- Bootstrap core JavaScript

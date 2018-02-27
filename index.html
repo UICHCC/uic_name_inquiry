@@ -350,7 +350,7 @@
                     </div>
                 </div>
                 <input class="form-control form-control-lg" type="text" placeholder="Your English Name" id="EnglishName"
-                       style="text-align: center;">
+                       style="text-align: center;" onkeydown="KeyDown()">
                 <p class="lead"></p>
                 <p class="lead">
                     <button class="btn btn-lg btn-warning" id="InquiryBtn">查询</button>
@@ -2811,5 +2811,10 @@
         $("#titleName").text($("#EnglishName").val());
         $("#amountCard").removeClass('invisible');
     })
+    function KeyDown(){
+	 if (event.keyCode==13){
+	     $("#InquiryBtn").trigger("click");
+	 }
+    }
 </script>
 </html>

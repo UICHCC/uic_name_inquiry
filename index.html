@@ -41,7 +41,7 @@
 		html,
 		body {
 		  height: 100%;
-		  background-image: url("https://source.unsplash.com/collection/1286604");
+		  background-image: url("https://source.unsplash.com/collection/1626538");
 		  background-size: cover;
 		  background-color: #333;
 		}
@@ -147,22 +147,22 @@
 
       <main role="main" class="inner cover">
       	<div class="card border-primary bg-transparent invisible" style="margin-bottom: 1rem;" id="amountCard">
-		<div class="card-header border-success">数据库中叫 <span id="titleName"></span> 的人有</div>
+		<div class="card-header border-primary">数据库中叫 <span id="titleName"></span> 的人有</div>
 			<div class="card-body">
 				<h1><span id="amountPlace"></span> 人</h1>
 			</div>
 		</div>
-        <input class="form-control form-control-lg" type="text" placeholder="Your English Name" id="EnglishName">
+        <input class="form-control form-control-lg" type="text" placeholder="Your English Name" id="EnglishName" style="text-align: center;">
         <p class="lead"></p>
         <p class="lead">
           <button class="btn btn-lg btn-primary" id="InquiryBtn">查询</button>
         </p>
-        <small>我们整理出了 2013 届 - 2017 届学生的英文名，来看看有多少人与你同名呢？</small>
+        <small>我们整理出了 2013 届 - 2017 届学生的英文名，来看看有多少人与你同名呢？ <br>（部分英文名大小写敏感）</small>
       </main>
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>&copy; <a href="https://uichcc.com/">UIC HCC Computer Society</a>, UICer New Media Studio.</p>
+          <p>&copy; <a href="https://uichcc.com/">UIC HCC Computer Society</a><!--, UICer New Media Studio.--></p>
         </div>
       </footer>
     </div>
@@ -2568,8 +2568,8 @@
 		{"name":"Ziro","count":"1"},
 		{"name":"Ziyi","count":"1"},
 		{"name":"Zizi","count":"1"},
-		{"name":"Zwei","count":"1"},
-	]
+		{"name":"Zwei","count":"1"}
+	];
 
 function titleCase(str) {
 
@@ -2582,13 +2582,18 @@ function titleCase(str) {
   return string;
 }
 
+function InquiryEntry(input){
+    return Enumerable.From(dataSet)
+        .Where(function (x) { return x.name === input })
+        .Select(function (x) { return x.count })
+        .ToArray();
+}
+
 function InquiryName(rawName){
-	CapName = titleCase(rawName);
-	Amount = Enumerable.From(dataSet).Where(function (x) { return x.name == CapName }).Select(function (x) { return x.count }).ToArray();
-	if (Amount[0] == null) {
-		Amount[0] = 0;
-	}
-	return parseInt(Amount[0]);
+	var CapName = titleCase(rawName);
+	var Amount = InquiryEntry(CapName)[0];
+    var Attempt = InquiryEntry(rawName)[0];
+	return parseInt(Amount==null?(Attempt==null?0:Attempt):Amount);
 }
 
 $("#InquiryBtn").click(function(){

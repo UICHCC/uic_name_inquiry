@@ -172,7 +172,7 @@
             border-radius: 50%;
             border: 3px solid transparent;
             /* COLOR 1 */
-            border-top-color: #FFF;
+            border-top-color: #212529;
             -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
             -ms-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
             -moz-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
@@ -191,7 +191,7 @@
             border-radius: 50%;
             border: 3px solid transparent;
             /* COLOR 2 */
-            border-top-color: #FFF;
+            border-top-color: #212529;
             -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
             -moz-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
             -o-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
@@ -208,7 +208,7 @@
             bottom: 15px;
             border-radius: 50%;
             border: 3px solid transparent;
-            border-top-color: #FFF;
+            border-top-color: #212529;
             /* COLOR 3 */
             -moz-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
             -o-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
@@ -248,7 +248,7 @@
             top: 0;
             width: 51%;
             height: 100%;
-            background: #e1b82d; /* Old browsers */
+            background: #ffc107; /* Old browsers */
             z-index: 1000;
             -webkit-transform: translateX(0); /* Chrome, Opera 15+, Safari 3.1+ */
             -ms-transform: translateX(0); /* IE 9 */
@@ -331,7 +331,13 @@
     <div id="loader"></div>
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
-    <div class="load_title">Loading</div>
+    <div class="load_title" style="color: #212529;">Loading
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <a href="https://uichcc.com/" style="color: #212529">Developed by: UIC HCC Computer Society</a>
+            </div>
+        </footer>
+    </div>
 </div>
 <div class="site-wrapper">
     <div class="site-wrapper-inner" style="background-color: rgba(0, 0, 0, 0.5);">
@@ -359,15 +365,23 @@
             </main>
 
             <footer class="mastfoot mt-auto">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div style="padding-right: 2rem" class="flex-column">
+                        <a href="https://uichcc.com/">
+                        <img class="img-fluid align-self-center p-2" style="height: 2rem;" src="https://uichcc.com/img/uichccwhite.svg">
+                        </a>
+                        <a class="p-2" href="https://uichcc.com/">UIC HCC 计算机协会</a>
+                    </div>
+                    <div class="flex-column">
+                        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5OTIxNjgwMA==&scene=124#wechat_redirect">
+                            <img class="img-fluid align-self-center p-2" style="height: 3rem;" src="https://uichcc.com/projects/gpacal/img/uicerlogo.jpeg">
+                        </a>
+                        <a class="p-2" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5OTIxNjgwMA==&scene=124#wechat_redirect">UICer · UIC 新媒体工作室</a>
+                    </div>
+                </div>
                 <div class="inner">
-                    <p>&copy; 2018 <a href="https://uichcc.com/">UIC HCC Computer Society 计算机协会</a>
-                        <!--, UICer New Media Studio.--></p>
-                    <p>Credit:
-                        <a href="https://getbootstrap.com/">Bootstrap</a> |
-                        <a href="https://jquery.org/">jQuery</a> |
-                        <a href="https://archive.codeplex.com/?p=linqjs">LINQ.js</a> |
-                        <a href="http://www.bootcdn.cn/">BootCDN</a> |
-                        <a href="https://unsplash.com/">Unsplash</a></p>
+                    <p><a href="tou.html">Privacy Policy · Copyright</a></p>
+
                 </div>
             </footer>
         </div>
